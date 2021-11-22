@@ -54,3 +54,39 @@ my_header.addEventListener('dblclick', function(){
   }
   
 });
+
+//Fonctionnalité 6 :
+let my_btn_views = document.querySelectorAll('.btn.btn-sm.btn-success')
+
+
+my_btn_views.forEach(item => 
+  item.addEventListener("mouseover", function(){ 
+let card_of_item = item.parentNode.parentNode.parentNode
+let my_image = card_of_item.parentNode.firstElementChild
+  if (card_of_item.firstElementChild.style.display == "none"){
+    card_of_item.firstElementChild.style.display = "block";
+    my_image.style.height =  '100%';
+    my_image.style.width = '100%';
+  }
+  else {
+    card_of_item.firstElementChild.style.display = "none";
+    my_image.style.height =  '20%';
+    my_image.style.width = '20%';
+  }
+}))
+
+//Fonctionnalité 7 :
+let my_arrow_right = document.querySelector('a.btn.btn-secondary.my-2')
+my_arrow_right.addEventListener("click", function(){ 
+  last_card = document.querySelectorAll('div.col-md-4')[5]
+  fist_card = document.querySelectorAll('div.col-md-4')[0]
+  last_card.parentNode.insertBefore(last_card, fist_card);
+})
+
+//Fonctionnalité 8 :
+let my_arrow_left = document.querySelector('a.btn.btn-primary.my-2')
+my_arrow_left.addEventListener("click", function(){ 
+  last_card = document.querySelectorAll('div.col-md-4')[5]
+  fist_card = document.querySelectorAll('div.col-md-4')[0]
+  fist_card.parentNode.insertBefore(fist_card, null);
+})
