@@ -90,3 +90,32 @@ my_arrow_left.addEventListener("click", function(){
   fist_card = document.querySelectorAll('div.col-md-4')[0]
   fist_card.parentNode.insertBefore(fist_card, null);
 })
+
+//Fonctionnalité 9 :
+let my_body = document.querySelector('body')
+let js_event = document.querySelector('a.navbar-brand.d-flex.align-items-center')
+js_event.addEventListener('keypress', logKey);
+function logKey(e) {
+  console.log(e)
+  switch (e.code) {
+    case "KeyQ":
+  my_body.className = "";
+  my_body.classList.add("col-4")
+  my_body.classList.add("offset-md-0")
+  break;
+    case "KeyY":
+  my_body.className = "";
+  my_body.classList.add("col-4")
+  my_body.classList.add("offset-md-4")
+  break;
+    case "KeyP":
+  my_body.className = "";
+  my_body.classList.add("col-4")
+  my_body.classList.add("offset-md-8")
+  break;
+    case "KeyB":
+  my_body.className = "";
+  break;
+  }
+}
+
